@@ -1,10 +1,11 @@
 # Starter pipeline
-- task: ExtractFiles@1
+- task: ArchiveFiles@2
   inputs:
-    archiveFilePatterns: '**/*.zip'
-    destinationFolder: 'The Dark Island'
-    cleanDestinationFolder: true
-    overwriteExistingFiles: true
+    rootFolderOrFile: 'The Dark Island'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'The Dark Island'
+    replaceExistingArchive: true
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
