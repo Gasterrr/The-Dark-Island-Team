@@ -1,0 +1,46 @@
+package net.mcreator.thedarkisland.item;
+
+import net.minecraftforge.registries.ObjectHolder;
+
+import net.minecraft.item.Rarity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
+import net.minecraft.block.BlockState;
+
+import net.mcreator.thedarkisland.itemgroup.ToolsDarksItemGroup;
+import net.mcreator.thedarkisland.ThedarkislandModElements;
+
+@ThedarkislandModElements.ModElement.Tag
+public class PickaxeExamedItem extends ThedarkislandModElements.ModElement {
+	@ObjectHolder("thedarkisland:pickaxe_examed")
+	public static final Item block = null;
+	public PickaxeExamedItem(ThedarkislandModElements instance) {
+		super(instance, 42);
+	}
+
+	@Override
+	public void initElements() {
+		elements.items.add(() -> new ItemCustom());
+	}
+	public static class ItemCustom extends Item {
+		public ItemCustom() {
+			super(new Item.Properties().group(ToolsDarksItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));
+			setRegistryName("pickaxe_examed");
+		}
+
+		@Override
+		public int getItemEnchantability() {
+			return 0;
+		}
+
+		@Override
+		public int getUseDuration(ItemStack itemstack) {
+			return 0;
+		}
+
+		@Override
+		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
+			return 2.5F;
+		}
+	}
+}
